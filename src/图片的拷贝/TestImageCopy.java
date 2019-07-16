@@ -37,6 +37,7 @@ public class TestImageCopy {
 			//这里是读，读到b数组中，b数组是我们在内存中开辟缓冲区
 			while((numbers = fis.read(b)) != -1) {
 				fos.write(b,0,numbers);//读多少写多少
+				fos.flush(); //刷新
 			}
 			
 			

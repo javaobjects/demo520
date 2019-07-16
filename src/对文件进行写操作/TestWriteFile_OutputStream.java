@@ -15,7 +15,7 @@ public class TestWriteFile_OutputStream {
 		 * 3、写操作，肯定要while循环
 		 * 4、流要关闭
 		 * 
-		 * 备注：若目标文件中有内容将会对其内容清空再写入
+		 * 
 		 */
 		File path = new File("file");
 		
@@ -36,10 +36,13 @@ public class TestWriteFile_OutputStream {
 		FileOutputStream fos = null;
 		
 		try {
+			//默认删除写，若想要追加写则需要后面加参数true
 			fos = new FileOutputStream(dest);
 			//3.写操作
 			String message = "qwert";//写的内容
 			byte[] b = message.getBytes();
+//			1024的倍数，线程1：0-1024 线程：1024-2048 线程：2048-3072
+//			fos.write(b);//可以直接写入一个byte数组
 			for (int i = 0; i < b.length; i++) {
 				fos.write(b[i]);
 			}

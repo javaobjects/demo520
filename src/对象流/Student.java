@@ -5,11 +5,15 @@ import java.io.Serializable;
 public class Student implements Serializable{//关键点只要在网上传输就一定要实现这个序列接口
 
 	/** 
+	 * 此处自动生成的序列号不可更改，
+	 * 若更改则会报错序列号不一致
 	* serialVersionUID
 	*/  
 	private static final long serialVersionUID = -5571074817084289161L;
 	private Integer id;
 	private String name;
+	//transient瞬时 不需要序列化的属性前面加上这个关键字则不会写入
+//	private transient String name;
 	private String address;
 	public Integer getId() {
 		return id;

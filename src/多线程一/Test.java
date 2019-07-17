@@ -11,24 +11,19 @@ public class Test {
 		 * 一个从301-600
 		 * 一个从601-900
 		 */
-		PrintNumber p1 = new PrintNumber(1, 300);
-		p1.print();
-		PrintNumber p2 = new PrintNumber(301, 600);
-		p2.print();
-		PrintNumber p3 = new PrintNumber(601, 900);
-		p3.print();
+		PrintNumber p1 = new PrintNumber(1, 3000);
+//		p1.print();
+		PrintNumber p2 = new PrintNumber(3001, 6000);
+//		p2.print();
+		PrintNumber p3 = new PrintNumber(6001, 9000);
+//		p3.print();
 		//开辟 三个线程
-		Thread t1 = new Thread(p1);
-		t1.start();
+		Thread t1 = new Thread(p1);//这里有传参准备就绪后会调用run方法
+		t1.start();//准备就绪 
 		Thread t2 = new Thread(p2);
 		t2.start();
 		Thread t3 = new Thread(p3);
 		t3.start();
-		
-		
-		
-		
-		
 	}
 
 }
